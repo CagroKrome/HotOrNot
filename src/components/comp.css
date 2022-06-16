@@ -1,0 +1,121 @@
+/* Navbar */
+.navbar {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 200px;
+    background-color: white;
+    margin-bottom: 30px;
+}
+
+.navbar-element {
+    font-size: 2.1rem;
+    color: hsl(0, 0%, 55%);
+    width: 300px;
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 200px;
+    cursor: pointer;
+}
+
+.navbar-element:hover {
+    color: hsl(-6, 50%, 54%);
+    transition: 0.2s ease;
+}
+
+.active {
+    color: hsl(-6, 50%, 54%);
+    background-color: hsl(-6, 50%, 94%);
+    transition: 0.2s;
+}
+
+/* Box */
+
+.box {
+    height: 300px;
+    width: 500px;
+    background-color: white;
+    display: inline-block;
+    padding: 25px;
+    border-radius: 6px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.box-title {
+    font-size: 2rem;
+    color: black;
+}
+
+.likes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2rem;
+    font-weight: 800;
+    gap: 10px;
+}
+
+.like-btn {
+    background-color: hsl(0, 0%, 70%);
+    font-size: 1.5rem;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.like-btn:hover {
+    animation: likeBtn 0.5s;
+}
+
+@keyframes likeBtn {
+    33% {
+        transform: scale(1.1) rotate(7deg);
+    }
+
+    66% {
+        transform: scale(1.05) rotate(-7deg)
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg)
+    }
+}
+
+.boxes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 0px;
+}
+
+/* Spinner */
+.spinner {
+    border: 7px transparent solid;
+    border-top: 7px hsl(-6, 50%, 54%) solid;
+    height: 45px;
+    width: 45px;
+    border-radius: 100%;
+    animation: load 2s infinite ease-in-out;
+}
+
+@keyframes load {
+    50% {
+        transform: rotate(360deg);
+        border: 7px white solid;
+        border-top: 7px hsl(-6, 50%, 54%) solid;
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}

@@ -1,17 +1,29 @@
+// Imports
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { createRoot } from 'react-dom/client'; // because of some shit deprecated
+// import axios from 'axios'; // for requests
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // for routing
+import { JokeProvider } from './contexts/JokeContext'; // context
+import Home from './pages/Home';
+import Stats from './pages/Stats';
+import './index.css'
+import Info from './pages/Info';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const container = document.getElementById('root')
+const root = createRoot(container)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+function App() {
+  return (
+        <JokeProvider>
+        <Router>
+            <Routes>
+                <Route path='/' element={ <Home /> } ></Route>
+                <Route path='stats' element={ <Stats /> } ></Route>
+                <Route path='info' element={ <Info /> } ></Route>
+            </Routes>
+        </Router>
+      </JokeProvider>
+  )
+}
+
+root.render(<App/>)
